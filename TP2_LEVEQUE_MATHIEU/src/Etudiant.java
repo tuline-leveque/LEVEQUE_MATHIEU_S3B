@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Etudiant {
+
+    private Identite identite;
+    //private Formation formation;
+    private Map<String, ArrayList<Float>> resultats;
+
+    public Etudiant(String nip, String n, String p) {
+        this.identite = new Identite(nip,n,p);
+        this.resultats = new HashMap<>();
+    }
+
+    public void ajoutNote(String matiere, float note) {
+        if ((note <= 20)&&(note >= 0)) {
+            if (this.resultats.containsKey(matiere)) {
+                this.resultats.get(matiere).add(note);
+            } else {
+                ArrayList<Float> notes = new ArrayList<>();
+                notes.add(note);
+            }
+        }
+    }
+
+}
