@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Etudiant {
+    - resultats : Map<String, float[]>
+}
+
+class Identite {
+ -NIP : String
+ - nom : String
+ - prenom : String
+}
+
+class Formation {
+ - identifiant : String
+ - CollMatieres : Map<String, float>
+}
+/'
+class GroupeEtudiant {}
+GroupeEtudiant -> Etudiant : - groupeEtudiant
+GroupeEtudiant -> Formation : - formation
+'/
+
+
+Etudiant -> Identite : - identite
+Etudiant -> Formation : - formation
+
+@enduml
