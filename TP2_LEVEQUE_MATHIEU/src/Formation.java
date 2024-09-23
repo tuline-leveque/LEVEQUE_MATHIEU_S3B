@@ -10,7 +10,7 @@ public class Formation {
         CollMatieres = new HashMap<String, Double>();
     }
 
-    public void addMatiere(String matiere, Double valeur) {
+    public void adjMatiere(String matiere, Double valeur) {
         CollMatieres.put(matiere, valeur);
     }
 
