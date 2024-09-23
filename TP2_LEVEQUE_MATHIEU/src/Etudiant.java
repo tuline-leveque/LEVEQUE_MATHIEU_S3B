@@ -38,4 +38,20 @@ public class Etudiant {
         }
     }
 
+    public float calculMoyenneGenerale() {
+        float somme = 0;
+        int nbnotes = 0;
+        for (String matiere: this.resultats.keySet()) {
+            for (float elt: this.resultats.get(matiere)) {
+                somme = somme + elt;
+                nbnotes += 1;
+            }
+        }
+        if (nbnotes == 0) {
+            return -1;
+        } else {
+            return somme / nbnotes;
+        }
+    }
+
 }
