@@ -24,4 +24,18 @@ public class Etudiant {
         }
     }
 
+    public float calculMoyenne(String matiere) {
+        float somme = 0;
+        int nbnotes = 0;
+        if (!this.resultats.containsKey(matiere)) {
+            return -1;
+        } else {
+            for (float elt: this.resultats.get(matiere)) {
+                nbnotes += 1;
+                somme = somme + elt;
+            }
+            return somme/nbnotes;
+        }
+    }
+
 }
